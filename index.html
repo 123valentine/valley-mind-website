@@ -3,53 +3,588 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ValleyMind AI</title>
+
+  <!-- SEO Meta -->
+  <title>ValleyMind AI — Africa's Next Generation AI Platform</title>
+  <meta name="description" content="ValleyMind AI is an intelligent all-in-one AI platform empowering creators, businesses, developers, and students with AI chat, image generation, video creation, voice, and automation.">
+  <meta name="keywords" content="AI platform, artificial intelligence, AI chat, AI images, AI videos, AI voice, AI automation, Africa AI, ValleyMind">
+  <meta name="author" content="ValleyMind AI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://valleymind.ai/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valleymind.ai/">
+  <meta property="og:title" content="ValleyMind AI — Africa's Next Generation AI Platform">
+  <meta property="og:description" content="One AI. Unlimited Possibilities. An intelligent all-in-one AI platform for creators, businesses, and developers.">
+  <meta property="og:image" content="assets/valleymind-banner.png">
+  <meta property="og:site_name" content="ValleyMind AI">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ValleyMind AI — Africa's Next Generation AI Platform">
+  <meta name="twitter:description" content="One AI. Unlimited Possibilities. AI chat, images, video, voice, and automation in one platform.">
+  <meta name="twitter:image" content="assets/valleymind-banner.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/valleymind-logo.png">
+  <link rel="apple-touch-icon" href="assets/valleymind-logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ValleyMind AI",
+    "url": "https://valleymind.ai",
+    "logo": "https://valleymind.ai/assets/valleymind-logo.png",
+    "description": "ValleyMind AI is an intelligent all-in-one AI platform empowering creators, businesses, developers, and students with cutting-edge artificial intelligence.",
+    "founder": {
+      "@type": "Person",
+      "name": "Egbujie Valentine"
+    },
+    "sameAs": [
+      "https://linkedin.com",
+      "https://github.com",
+      "https://youtube.com",
+      "https://tiktok.com",
+      "https://instagram.com",
+      "https://facebook.com",
+      "https://x.com"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ValleyMind AI",
+    "url": "https://valleymind.ai"
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <img src="assets/valleymind-logo.png" alt="ValleyMind Logo" class="logo">
-    <h1>Welcome to ValleyMind AI</h1>
-  </header>
 
-  <main>
-    <section class="about">
-      <h2>About Us</h2>
-      <p>
-        ValleyMind AI is a project built with heart, creativity, and vision.  
-        Our mission is to create intelligent tools that combine innovation with a human touch.  
-        <br><br>
-        <strong>Created by Valentine Egbujie</strong>
-      </p>
-    </section>
-
-    <section class="gallery">
-      <h2>Our Visual Identity</h2>
-      <div class="images">
-        <figure>
-          <img src="assets/valleymind-logo.png" alt="ValleyMind Logo" class="gallery-img">
-          <figcaption>Logo</figcaption>
-        </figure>
-
-        <figure>
-          <img src="assets/valleymind-banner.png" alt="ValleyMind Banner" class="gallery-img">
-          <figcaption>Banner</figcaption>
-        </figure>
-
-        <figure>
-          <img src="assets/valleymind-flyer.png" alt="ValleyMind Flyer" class="gallery-img">
-          <figcaption>Flyer</figcaption>
-        </figure>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-ring">
+        <div class="loading-ring-inner"></div>
+        <img src="assets/valleymind-logo.png" alt="ValleyMind AI" class="loading-logo">
       </div>
-    </section>
-  </main>
+      <h2 class="loading-title">ValleyMind AI</h2>
+      <p class="loading-text">Initializing ValleyMind AI<span class="loading-dots"></span></p>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 ValleyMind AI. All rights reserved.</p>
-    <p>
-      Contact: <a href="mailto:egbujievalentine@gmail.com">egbujievalentine@gmail.com</a> | 
-      <a href="tel:+2349151270571">+234 9151270571</a>
-    </p>
+  <!-- Premium Cursor -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Ambient Background Effects -->
+  <div class="ambient-bg">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Premium Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/valleymind-logo.png" alt="ValleyMind AI" class="logo-img">
+        <span class="logo-text">ValleyMind</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Log In</a>
+        <a href="#cta" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <a href="#" class="btn btn-ghost btn-full">Log In</a>
+        <a href="#cta" class="btn btn-primary btn-full">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge" data-animate="fade-up">
+          <span class="badge-dot"></span>
+          Africa's Next Generation AI Platform
+        </div>
+        <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+          One AI.<br>
+          <span class="highlight">Unlimited Possibilities.</span>
+        </h1>
+        <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+          ValleyMind AI is an intelligent all-in-one AI platform that empowers creators, businesses, developers, students, and professionals with cutting-edge artificial intelligence. From AI conversations and image generation to video creation, automation, productivity, and future AI innovations, ValleyMind AI delivers everything in one powerful ecosystem.
+        </p>
+        <div class="hero-cta" data-animate="fade-up" data-delay="300">
+          <a href="#cta" class="btn btn-primary btn-lg">
+            <span>Launch ValleyMind</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#features" class="btn btn-outline btn-lg">Explore Features</a>
+        </div>
+        <p class="hero-footnote" data-animate="fade-up" data-delay="400">The future of AI starts here.</p>
+      </div>
+      <div class="hero-visual" data-animate="fade-left" data-delay="200">
+        <div class="hero-video-wrap">
+          <div class="hero-video-glow"></div>
+          <div class="hero-video-inner">
+            <div class="hero-video-bar">
+              <div class="hero-video-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="hero-video-title">Welcome to ValleyMind AI</span>
+            </div>
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/valleymind-banner.png">
+              <source src="assets/WhatsApp Video 2026-07-28 at 12.04.26 PM.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Grid -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Core Platform</span>
+        <h2>Built for everyone</h2>
+        <p>Three powerful AI tools, one unified ecosystem.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-animate="fade-up" data-delay="0">
+          <div class="feature-card-media">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.04.13 PM.jpeg" alt="AI Assistant" loading="lazy">
+          </div>
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>AI Assistant</h3>
+          <p>Experience intelligent conversations, writing assistance, brainstorming, problem solving, and productivity powered by advanced artificial intelligence.</p>
+          <a href="#products" class="feature-link">Get Started <span>&rarr;</span></a>
+        </div>
+        <div class="feature-card" data-animate="fade-up" data-delay="100">
+          <div class="feature-card-media">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.04.14 PM.jpeg" alt="AI Image Generator" loading="lazy">
+          </div>
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h3>AI Image Generator</h3>
+          <p>Create stunning artwork, futuristic concepts, realistic portraits, illustrations, and creative visuals within seconds.</p>
+          <a href="#products" class="feature-link">Get Started <span>&rarr;</span></a>
+        </div>
+        <div class="feature-card" data-animate="fade-up" data-delay="200">
+          <div class="feature-card-media">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.13.08 PM (1).jpeg" alt="AI Video Creator" loading="lazy">
+          </div>
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h3>AI Video Creator</h3>
+          <p>Generate cinematic AI videos, promotional content, animations, and creative storytelling directly from simple prompts.</p>
+          <a href="#products" class="feature-link">Get Started <span>&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Products</span>
+        <h2>The ValleyMind Ecosystem</h2>
+        <p>Powerful AI tools designed for creators, businesses, and innovators.</p>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card" data-animate="fade-up" data-delay="0">
+          <div class="product-glow"></div>
+          <div class="product-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>ValleyMind AI Chat</h3>
+          <p>Intelligent conversations, reasoning, coding, writing, research, brainstorming, and productivity.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="product-card" data-animate="fade-up" data-delay="80">
+          <div class="product-glow"></div>
+          <div class="product-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h3>ValleyMind AI Images</h3>
+          <p>Generate professional artwork, illustrations, logos, concept art, marketing visuals, and realistic images.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="product-card" data-animate="fade-up" data-delay="160">
+          <div class="product-glow"></div>
+          <div class="product-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h3>ValleyMind AI Videos</h3>
+          <p>Create cinematic AI-generated videos from text prompts with high-quality motion and visual storytelling.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="product-card" data-animate="fade-up" data-delay="80">
+          <div class="product-glow"></div>
+          <div class="product-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <h3>ValleyMind AI Voice</h3>
+          <p>Generate natural speech, voice cloning, text-to-speech, speech recognition, and multilingual voice interaction.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="product-card" data-animate="fade-up" data-delay="160">
+          <div class="product-glow"></div>
+          <div class="product-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>ValleyMind AI Automation</h3>
+          <p>Automate repetitive tasks, workflows, business processes, and intelligent decision-making.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="product-card product-card-soon" data-animate="fade-up" data-delay="240">
+          <div class="product-glow"></div>
+          <div class="product-badge-soon">Coming Soon</div>
+          <div class="product-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>ValleyMind AI Agents</h3>
+          <p>Autonomous AI assistants capable of performing multi-step tasks independently.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Capabilities Section -->
+  <section class="capabilities" id="capabilities">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Intelligence</span>
+        <h2>AI Capabilities</h2>
+        <p>Everything you need in one intelligent ecosystem.</p>
+      </div>
+      <div class="capabilities-grid">
+        <div class="cap-card cap-card-large" data-animate="fade-up">
+          <div class="cap-card-glow"></div>
+          <div class="cap-card-visual">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.04.13 PM.jpeg" alt="AI Chat" loading="lazy">
+          </div>
+          <div class="cap-card-text">
+            <div class="cap-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>AI Chat</h3>
+            <p>Engage in intelligent conversations, get instant answers, brainstorm ideas, and collaborate with a powerful AI assistant built for creators, developers, and professionals.</p>
+            <div class="cap-tags">
+              <span class="cap-tag">Conversations</span>
+              <span class="cap-tag">Brainstorming</span>
+              <span class="cap-tag">Coding</span>
+              <span class="cap-tag">Writing</span>
+              <span class="cap-tag">Research</span>
+              <span class="cap-tag">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+        <div class="cap-card" data-animate="fade-up" data-delay="100">
+          <div class="cap-card-glow"></div>
+          <div class="cap-card-visual cap-card-visual-sm">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.04.14 PM.jpeg" alt="AI Images" loading="lazy">
+          </div>
+          <div class="cap-icon-wrap-sm">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h3>AI Images</h3>
+          <p>Generate breathtaking artwork, product visuals, portraits, and creative designs from simple text descriptions.</p>
+        </div>
+        <div class="cap-card" data-animate="fade-up" data-delay="200">
+          <div class="cap-card-glow"></div>
+          <div class="cap-card-visual cap-card-visual-sm">
+            <video class="cap-video" autoplay muted loop playsinline preload="lazy">
+              <source src="assets/WhatsApp Video 2026-07-28 at 12.04.27 PM.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="cap-icon-wrap-sm">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h3>AI Videos</h3>
+          <p>Create cinematic videos, promotional content, and animations directly from text prompts with next-gen video AI.</p>
+        </div>
+        <div class="cap-card" data-animate="fade-up" data-delay="100">
+          <div class="cap-card-glow"></div>
+          <div class="cap-card-visual cap-card-visual-sm">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.13.08 PM (3).jpeg" alt="AI Voice" loading="lazy">
+          </div>
+          <div class="cap-icon-wrap-sm">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <h3>AI Voice</h3>
+          <p>Realistic text-to-speech, voice cloning, and audio generation for content creators, businesses, and developers.</p>
+        </div>
+        <div class="cap-card" data-animate="fade-up" data-delay="200">
+          <div class="cap-card-glow"></div>
+          <div class="cap-card-visual cap-card-visual-sm">
+            <img src="assets/WhatsApp Image 2026-07-28 at 12.13.08 PM (2).jpeg" alt="AI Automation" loading="lazy">
+          </div>
+          <div class="cap-icon-wrap-sm">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>AI Automation</h3>
+          <p>Automate workflows, streamline tasks, and boost productivity with intelligent AI-powered automation tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">About Us</span>
+        <h2>About ValleyMind AI</h2>
+        <p>Building the future of intelligence, from Africa for the world.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-main" data-animate="fade-up">
+          <div class="about-main-glow"></div>
+          <div class="about-main-content">
+            <p class="about-lead">ValleyMind AI is building the next generation of artificial intelligence to empower creators, developers, students, businesses, researchers, and innovators through one intelligent ecosystem.</p>
+            <p>We believe AI should be powerful, accessible, and designed to help people create, learn, work, and innovate. Our all-in-one platform combines AI chat, image generation, video creation, voice synthesis, and intelligent automation into a single seamless experience.</p>
+            <p>Founded by <strong>Egbujie Valentine</strong>, ValleyMind AI is driven by the vision of making world-class artificial intelligence available to everyone, everywhere.</p>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="about-card" data-animate="fade-up" data-delay="100">
+            <div class="about-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>Build powerful, accessible, intelligent AI that helps people create, learn, work, and innovate.</p>
+          </div>
+          <div class="about-card" data-animate="fade-up" data-delay="200">
+            <div class="about-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Our Vision</h3>
+            <p>Become one of the world's leading artificial intelligence companies built from Africa for the global community.</p>
+          </div>
+          <div class="about-card" data-animate="fade-up" data-delay="300">
+            <div class="about-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Our Founder</h3>
+            <p>Egbujie Valentine — creator and visionary behind ValleyMind AI, building intelligent tools with heart and innovation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="cta">
+    <div class="section-container">
+      <div class="cta-card" data-animate="fade-up">
+        <div class="cta-glow"></div>
+        <div class="cta-visual">
+          <img src="assets/valleymind-flyer.png" alt="ValleyMind AI Platform" loading="lazy">
+        </div>
+        <div class="cta-content">
+          <h2>Ready to experience the future?</h2>
+          <p>Join creators, businesses, and developers building with ValleyMind AI today. Start for free.</p>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-primary btn-lg">
+              <span>Get Started Free</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost btn-lg">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Get in Touch</span>
+        <h2>Contact ValleyMind AI</h2>
+        <p>We'd love to hear from you. Reach out anytime.</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-card" data-animate="fade-up" data-delay="0">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h4>General Inquiries</h4>
+          <a href="mailto:contactvalleymind0@gmail.com">contactvalleymind0@gmail.com</a>
+        </div>
+
+        <div class="contact-card" data-animate="fade-up" data-delay="80">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h4>Business & Partnerships</h4>
+          <a href="mailto:businessvalleymind@gmail.com">businessvalleymind@gmail.com</a>
+        </div>
+
+        <div class="contact-card" data-animate="fade-up" data-delay="160">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h4>Technical Support</h4>
+          <a href="mailto:supportvalleymind@gmail.com">supportvalleymind@gmail.com</a>
+        </div>
+
+        <div class="contact-card" data-animate="fade-up" data-delay="240">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4>Phone</h4>
+          <a href="tel:+2349151270571">+234 915 127 0571</a>
+        </div>
+
+      </div>
+
+      <div class="contact-social" data-animate="fade-up">
+        <h3>Follow Us</h3>
+        <div class="social-grid">
+          <a href="#" class="social-card" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="#" class="social-card" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="#" class="social-card" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a href="#" class="social-card" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a href="#" class="social-card" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="social-card" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a href="#" class="social-card" aria-label="X (Twitter)" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>X (Twitter)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/valleymind-logo.png" alt="ValleyMind AI" class="footer-logo">
+        <p class="footer-desc">ValleyMind AI is building the future of artificial intelligence by empowering creators, businesses, developers, students, and innovators with powerful AI tools in one intelligent ecosystem.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#products">AI Chat</a></li>
+            <li><a href="#products">AI Images</a></li>
+            <li><a href="#products">AI Videos</a></li>
+            <li><a href="#products">AI Voice</a></li>
+            <li><a href="#products">AI Automation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers <span class="footer-badge">Soon</span></a></li>
+            <li><a href="#">Blog <span class="footer-badge">Soon</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025-2026 ValleyMind AI. All Rights Reserved.</p>
+                <p class="footer-contact">
+        <a href="mailto:hello@valleymind.ai">hello@valleymind.ai</a>
+        <span class="sep">|</span>
+        <a href="tel:+2349151270571">+234 915 127 0571</a>
+      </p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
