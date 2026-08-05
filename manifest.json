@@ -1,0 +1,46 @@
+{
+  "name": "ValleyMind AI — All-in-One AI Platform",
+  "short_name": "ValleyMind",
+  "description": "ValleyMind AI is an intelligent all-in-one AI platform for chat, image generation, video creation, voice, and automation.",
+  "id": "/",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "theme_color": "#0d0d1a",
+  "background_color": "#0d0d1a",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "business"],
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "assets/favicon-16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "assets/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "assets/icon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Products",
+      "short_name": "Products",
+      "url": "/index.html#products",
+      "icons": [{ "src": "assets/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Features",
+      "short_name": "Features",
+      "url": "/features.html",
+      "icons": [{ "src": "assets/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "url": "/contact.html",
+      "icons": [{ "src": "assets/icon-96.png", "sizes": "96x96" }]
+    }
+  ]
+}

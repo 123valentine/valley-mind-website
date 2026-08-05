@@ -6,6 +6,21 @@
 (function() {
   'use strict';
 
+  // ===== VALLEYMIND APP LINK =====
+  // Single source of truth for the live app URL. When the app moves to a
+  // custom domain (e.g. https://valleymind.ai or https://app.valleymind.ai),
+  // change ONLY this constant — every "Log In / Get Started / Launch" button
+  // is wired to it below via the [data-app-link] attribute.
+  const VALLEYMIND_APP_URL = 'https://valleymind-ai.onrender.com';
+
+  document.querySelectorAll('[data-app-link]').forEach(el => {
+    el.setAttribute('href', VALLEYMIND_APP_URL);
+    // These leave the marketing site for the app; open in the same tab so it
+    // feels like "entering" the product. Add target="_blank" here if you'd
+    // rather open the app in a new tab.
+    el.setAttribute('rel', 'noopener');
+  });
+
   // ===== LOADING SCREEN =====
   const loadingScreen = document.getElementById('loadingScreen');
 
@@ -296,5 +311,55 @@
   const rippleStyle = document.createElement('style');
   rippleStyle.textContent = `@keyframes vmRipple { to { width: 300px; height: 300px; opacity: 0; } }`;
   document.head.appendChild(rippleStyle);
+
+  // ===== PWA: SERVICE WORKER REGISTRATION =====
+  // Enables offline support + installability. Registered after load so it
+  // never competes with first paint.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => { /* non-fatal */ });
+    });
+  }
+
+  // ===== ANALYTICS (placeholders — no-ops until you add IDs) =====
+  // Fill any of these in to activate that provider site-wide. Left blank they
+  // do nothing, so there is zero tracking until you opt in.
+  const ANALYTICS = {
+    GA4_MEASUREMENT_ID: '',   // e.g. 'G-XXXXXXXXXX'  (Google Analytics 4)
+    GTM_CONTAINER_ID:  '',    // e.g. 'GTM-XXXXXXX'   (Google Tag Manager)
+    CLARITY_PROJECT_ID: '',   // e.g. 'abcdefghij'    (Microsoft Clarity)
+  };
+
+  function loadScript(src, attrs = {}) {
+    const s = document.createElement('script');
+    s.src = src; s.async = true;
+    Object.entries(attrs).forEach(([k, v]) => s.setAttribute(k, v));
+    document.head.appendChild(s);
+    return s;
+  }
+
+  if (ANALYTICS.GTM_CONTAINER_ID) {
+    (function (w, d, id) {
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      loadScript('https://www.googletagmanager.com/gtm.js?id=' + id);
+    })(window, document, ANALYTICS.GTM_CONTAINER_ID);
+  }
+
+  if (ANALYTICS.GA4_MEASUREMENT_ID) {
+    loadScript('https://www.googletagmanager.com/gtag/js?id=' + ANALYTICS.GA4_MEASUREMENT_ID);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', ANALYTICS.GA4_MEASUREMENT_ID);
+  }
+
+  if (ANALYTICS.CLARITY_PROJECT_ID) {
+    (function (c, l, a, r, i) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      loadScript('https://www.clarity.ms/tag/' + i);
+      c[a]('start', { projectId: i });
+    })(window, document, 'clarity', 'script', ANALYTICS.CLARITY_PROJECT_ID);
+  }
 
 })();

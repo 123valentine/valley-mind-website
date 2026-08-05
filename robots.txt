@@ -1,0 +1,41 @@
+# ValleyMind AI — robots.txt
+# Allow all well-behaved crawlers to index the whole public site.
+
+User-agent: *
+Allow: /
+
+# ── Explicitly welcome the major search engines ──────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ── Keep utility / non-content pages out of the index ────────
+User-agent: *
+Disallow: /offline.html
+Disallow: /404.html
+Disallow: /.well-known/
+
+# ── Sitemap ──────────────────────────────────────────────────
+# NOTE: absolute URL required. If you move to https://valleymind.ai,
+# update this line and every canonical/OG URL across the site.
+Sitemap: https://valley-mind-website-o3l8.onrender.com/sitemap.xml
