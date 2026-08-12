@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Builder — ValleyMind AI | Describe It, Build It, Download It</title>
+  <meta name="description" content="ValleyMind AI Builder turns a plain-language idea into a complete project — an editable plan, then the full codebase with a live preview and one-click download. It's how ValleyMind builds websites and apps.">
+  <meta name="keywords" content="ValleyMind AI Builder, AI website builder, AI app builder, code generation, build software with AI, live preview">
+  <meta name="author" content="ValleyMind AI">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="language" content="English">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0d0d1a">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://valley-mind-website-o3l8.onrender.com/ai-builder.html">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="ValleyMind">
+  <meta name="application-name" content="ValleyMind AI">
+  <meta name="msapplication-TileColor" content="#0d0d1a">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ValleyMind AI">
+  <meta property="og:title" content="AI Builder — ValleyMind AI">
+  <meta property="og:description" content="Turn a plain-language idea into a complete project with a live preview and one-click download.">
+  <meta property="og:url" content="https://valley-mind-website-o3l8.onrender.com/ai-builder.html">
+  <meta property="og:image" content="https://valley-mind-website-o3l8.onrender.com/assets/valleymind-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Builder — ValleyMind AI">
+  <meta name="twitter:description" content="Turn a plain-language idea into a complete project with a live preview and one-click download.">
+  <meta name="twitter:image" content="https://valley-mind-website-o3l8.onrender.com/assets/valleymind-banner.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+
+  <style>
+    .vm-lead { max-width: 730px; margin: 16px auto 0; color: var(--text-secondary); text-align: center; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px; }
+    .step { background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 22px; position: relative; }
+    .step .n { width: 30px; height: 30px; border-radius: 50%; background: var(--accent-subtle); border: 1px solid var(--accent-border); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 12px; }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .step p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+    .ui-preview { max-width: 780px; margin: 0 auto; background: #0d1117; border: 1px solid rgba(0,212,255,0.18); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+    .ui-bar { display: flex; align-items: center; gap: 8px; padding: 11px 16px; background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.78rem; color: var(--text-secondary); }
+    .ui-bar .sparkle { color: #00d4ff; }
+    .ui-split { display: grid; grid-template-columns: 200px 1fr; min-height: 220px; }
+    .ui-files { border-right: 1px solid rgba(255,255,255,0.06); padding: 12px; font-family: 'Space Grotesk', monospace; font-size: 0.74rem; color: var(--text-secondary); }
+    .ui-files .f { padding: 4px 8px; border-radius: 6px; }
+    .ui-files .f.on { background: rgba(0,212,255,0.12); color: #7fe3ff; }
+    .ui-code { padding: 14px 16px; font-family: 'Space Grotesk', monospace; font-size: 0.74rem; color: #9fb3c8; line-height: 1.7; overflow: hidden; }
+    .ui-code .k { color: #00d4ff; } .ui-code .s { color: #7fe0a8; }
+    .note-avail { max-width: 720px; margin: 26px auto 0; text-align: center; font-size: 0.9rem; color: var(--text-tertiary); }
+    @media (max-width: 820px) { .steps { grid-template-columns: 1fr 1fr; } .ui-split { grid-template-columns: 1fr; } .ui-files { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); } }
+    @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-vmnav="ai-builder">
+  <div id="vmnav-root"></div>
+  <div class="ambient-bg"><div class="glow-orb glow-orb-1"></div><div class="glow-orb glow-orb-2"></div><div class="glow-orb glow-orb-3"></div></div>
+
+  <main>
+    <section class="features">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up" style="margin-bottom:30px;">
+          <span class="section-tag">AI Builder · Available now</span>
+          <h1>Describe it. ValleyMind builds it.</h1>
+          <p class="vm-lead">AI Builder turns a plain-language idea into a complete project — an editable plan first, then the full codebase with a live preview and a one-click download. It's how ValleyMind builds <strong>websites and apps</strong>, powered by the OpenCode API and running on our server.</p>
+        </div>
+
+        <div class="ui-preview" data-animate="fade-up" role="img" aria-label="Preview of the ValleyMind AI Builder interface with a file tree and generated code">
+          <div class="ui-bar"><span class="sparkle">✦</span> ValleyMind AI Builder — building "landing page for a coffee brand"</div>
+          <div class="ui-split">
+            <div class="ui-files"><div class="f on">index.html</div><div class="f">styles.css</div><div class="f">script.js</div><div class="f">assets/</div></div>
+            <div class="ui-code"><span class="k">&lt;section</span> class=<span class="s">"hero"</span><span class="k">&gt;</span><br>&nbsp;&nbsp;<span class="k">&lt;h1&gt;</span>Roasted for the bold.<span class="k">&lt;/h1&gt;</span><br>&nbsp;&nbsp;<span class="k">&lt;a</span> class=<span class="s">"btn"</span><span class="k">&gt;</span>Shop now<span class="k">&lt;/a&gt;</span><br><span class="k">&lt;/section&gt;</span></div>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:0.75rem;color:var(--text-tertiary);margin-top:10px;">Interface preview rendered from the ValleyMind AI Builder.</p>
+      </div>
+    </section>
+
+    <section class="features" style="padding-top:0;">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up"><span class="section-tag">How it works</span><h2>From idea to download in four steps</h2></div>
+        <div class="steps">
+          <div class="step" data-animate="fade-up"><div class="n">1</div><h3>Describe</h3><p>Tell the Builder, in plain language, what you want to make.</p></div>
+          <div class="step" data-animate="fade-up" data-delay="60"><div class="n">2</div><h3>Plan</h3><p>It writes an editable specification you can review and adjust.</p></div>
+          <div class="step" data-animate="fade-up" data-delay="120"><div class="n">3</div><h3>Build &amp; Preview</h3><p>It generates the full codebase and shows a live preview.</p></div>
+          <div class="step" data-animate="fade-up" data-delay="180"><div class="n">4</div><h3>Download</h3><p>Take the whole project with one click, or keep iterating.</p></div>
+        </div>
+        <p class="note-avail">The Builder's availability is managed dynamically — if capacity is momentarily full you'll see a clear message and a Regenerate option, never a broken result.</p>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="section-container">
+        <div class="cta-card" data-animate="fade-up">
+          <div class="cta-glow"></div>
+          <div class="cta-content">
+            <h2>Build your next project</h2>
+            <p>Describe an idea and watch ValleyMind assemble it — free to start.</p>
+            <div class="cta-actions">
+              <a href="https://valleymind-ai.onrender.com" rel="noopener" class="btn btn-primary btn-lg"><span>Open AI Builder</span></a>
+              <a href="studio.html" class="btn btn-ghost btn-lg">Explore Studio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/valleymind-logo.png" alt="ValleyMind AI" class="footer-logo">
+        <p class="footer-desc">ValleyMind AI is building the future of artificial intelligence by empowering creators, businesses, developers, students, and innovators with powerful AI tools in one intelligent ecosystem.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Product</h4><ul><li><a href="assistant.html">AI Assistant</a></li><li><a href="studio.html">Studio</a></li><li><a href="ai-builder.html">AI Builder</a></li><li><a href="features.html">Features</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="use-cases.html">Use Cases</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#security">Security</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025-2026 ValleyMind AI. All Rights Reserved.</p>
+      <p class="footer-contact"><a href="mailto:contactvalleymind0@gmail.com">contactvalleymind0@gmail.com</a><span class="sep">|</span><a href="tel:+2349151270571">+234 915 127 0571</a></p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebPage", "name": "AI Builder — ValleyMind AI", "url": "https://valley-mind-website-o3l8.onrender.com/ai-builder.html", "description": "Turn a plain-language idea into a complete project with a live preview and one-click download.", "isPartOf": { "@type": "WebSite", "name": "ValleyMind AI", "url": "https://valley-mind-website-o3l8.onrender.com/" } }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://valley-mind-website-o3l8.onrender.com/" }, { "@type": "ListItem", "position": 2, "name": "AI Builder", "item": "https://valley-mind-website-o3l8.onrender.com/ai-builder.html" } ] }
+  </script>
+
+  <script src="script.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

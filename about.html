@@ -55,6 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
 
   <!-- Page-scoped styles for the About-only components (checklists, meta rows).
        Uses the site's existing design tokens; adds no global styles. -->
@@ -79,7 +80,8 @@
     .vm-meta a { color: var(--accent); }
   </style>
 </head>
-<body>
+<body data-vmnav="about">
+  <div id="vmnav-root"></div>
 
   <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
@@ -461,5 +463,6 @@
   </script>
 
   <script src="script.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>

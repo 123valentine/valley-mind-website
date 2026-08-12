@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Assistant — ValleyMind AI | Marcus, Elena &amp; Angelina</title>
+  <meta name="description" content="ValleyMind's AI Assistant: three distinct personas — Marcus, Elena and Angelina — in one conversation, with memory, reasoning, live search, document-grounded answers, and voice input and output.">
+  <meta name="keywords" content="ValleyMind AI Assistant, AI chat, Marcus Elena Angelina, AI memory, AI reasoning, AI voice, document analysis">
+  <meta name="author" content="ValleyMind AI">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="language" content="English">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0d0d1a">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://valley-mind-website-o3l8.onrender.com/assistant.html">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="ValleyMind">
+  <meta name="application-name" content="ValleyMind AI">
+  <meta name="msapplication-TileColor" content="#0d0d1a">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ValleyMind AI">
+  <meta property="og:title" content="AI Assistant — ValleyMind AI">
+  <meta property="og:description" content="Three AI personas in one conversation, with memory, reasoning, search, document grounding and voice.">
+  <meta property="og:url" content="https://valley-mind-website-o3l8.onrender.com/assistant.html">
+  <meta property="og:image" content="https://valley-mind-website-o3l8.onrender.com/assets/valleymind-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Assistant — ValleyMind AI">
+  <meta name="twitter:description" content="Three AI personas in one conversation, with memory, reasoning, search and voice.">
+  <meta name="twitter:image" content="https://valley-mind-website-o3l8.onrender.com/assets/valleymind-banner.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+
+  <style>
+    /* Feature-page shared bits */
+    .vm-lead { max-width: 720px; margin: 16px auto 0; color: var(--text-secondary); text-align: center; }
+    .vm-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .vm-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .vm-fcard { background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; }
+    .vm-fcard .ic { width: 44px; height: 44px; border-radius: 11px; background: var(--accent-subtle); border: 1px solid var(--accent-border); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .vm-fcard h3 { font-size: 1.04rem; font-weight: 700; margin-bottom: 7px; }
+    .vm-fcard p { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.5; }
+    /* UI preview — a faithful mock of the real app chat surface (dark #0d0d1a / cyan #00d4ff). */
+    .ui-preview { background: #0d1117; border: 1px solid rgba(0,212,255,0.18); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+    .ui-bar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .ui-dots span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+    .ui-personas { display: flex; gap: 6px; margin-left: auto; }
+    .ui-persona { font-size: 0.72rem; padding: 4px 10px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); }
+    .ui-persona.on { background: rgba(0,212,255,0.14); border-color: rgba(0,212,255,0.4); color: #7fe3ff; }
+    .ui-body { padding: 18px; display: flex; flex-direction: column; gap: 12px; min-height: 240px; }
+    .ui-msg { max-width: 80%; padding: 11px 14px; border-radius: 14px; font-size: 0.86rem; line-height: 1.45; }
+    .ui-msg.user { align-self: flex-end; background: #00d4ff; color: #032430; border-bottom-right-radius: 4px; }
+    .ui-msg.ai { align-self: flex-start; background: #1a2230; color: #e6f6ff; border: 1px solid rgba(255,255,255,0.06); border-bottom-left-radius: 4px; }
+    .ui-msg .who { display: block; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4fd0ef; margin-bottom: 4px; }
+    .ui-input { display: flex; align-items: center; gap: 10px; margin: 4px 18px 18px; padding: 10px 12px; background: #131b26; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: var(--text-tertiary); font-size: 0.84rem; }
+    .ui-input .mic { margin-left: auto; width: 30px; height: 30px; border-radius: 50%; background: rgba(0,212,255,0.14); color: #00d4ff; display: flex; align-items: center; justify-content: center; }
+    @media (max-width: 820px) { .vm-split { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+</head>
+<body data-vmnav="assistant">
+  <div id="vmnav-root"></div>
+  <div class="ambient-bg"><div class="glow-orb glow-orb-1"></div><div class="glow-orb glow-orb-2"></div><div class="glow-orb glow-orb-3"></div></div>
+
+  <main>
+    <!-- Hero + UI preview -->
+    <section class="features">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up" style="margin-bottom:36px;">
+          <span class="section-tag">AI Assistant · Available now</span>
+          <h1>Three minds, one conversation</h1>
+          <p class="vm-lead">ValleyMind's assistant isn't a single faceless chatbot. It's three distinct AI personas — <strong>Marcus</strong>, <strong>Elena</strong> and <strong>Angelina</strong> — each with their own voice and strengths. Switch between them mid-chat, or bring all three into the same thread.</p>
+        </div>
+        <div class="vm-split">
+          <div data-animate="fade-up">
+            <div class="ui-preview" role="img" aria-label="Preview of the ValleyMind AI chat interface with Marcus, Elena and Angelina personas">
+              <div class="ui-bar">
+                <span class="ui-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></span>
+                <div class="ui-personas"><span class="ui-persona on">Marcus</span><span class="ui-persona">Elena</span><span class="ui-persona">Angelina</span></div>
+              </div>
+              <div class="ui-body">
+                <div class="ui-msg user">Help me plan a launch video for my app.</div>
+                <div class="ui-msg ai"><span class="who">Marcus</span>Let's shape it. Who's the audience, and what's the one feeling you want them to walk away with? I can draft a script and hand it to Angelina for the creative pass.</div>
+                <div class="ui-msg ai"><span class="who">Angelina</span>Ooh — I'm thinking a bold 15‑second hook. Want me to storyboard three openings?</div>
+              </div>
+              <div class="ui-input">Message ValleyMind…<span class="mic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></span></div>
+            </div>
+            <p style="text-align:center;font-size:0.75rem;color:var(--text-tertiary);margin-top:10px;">Interface preview rendered from the ValleyMind app.</p>
+          </div>
+          <div data-animate="fade-up" data-delay="120">
+            <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:14px;">Built to think with you</h2>
+            <p style="color:var(--text-secondary);margin-bottom:14px;">Ask questions, brainstorm, write, code, research — and bring in a second or third persona when you want another perspective. Over time the personas become creative companions, not tools you open and close.</p>
+            <a href="https://valleymind-ai.onrender.com" rel="noopener" class="btn btn-primary btn-lg"><span>Try the Assistant</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="features" id="capabilities">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">Capabilities</span>
+          <h2>What the assistant can do</h2>
+        </div>
+        <div class="vm-feature-grid">
+          <div class="vm-fcard" id="memory" data-animate="fade-up">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 2 3 3 0 0 0 6 0 3 3 0 0 0 3-2 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-3-3z"/></svg></div>
+            <h3>Memory</h3>
+            <p>The assistant remembers context across a conversation and your saved details, so you don't repeat yourself.</p>
+          </div>
+          <div class="vm-fcard" id="reasoning" data-animate="fade-up" data-delay="60">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5"/></svg></div>
+            <h3>Reasoning</h3>
+            <p>Work through problems step by step — planning, analysis, coding and structured thinking.</p>
+          </div>
+          <div class="vm-fcard" id="search" data-animate="fade-up" data-delay="120">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <h3>Live Search</h3>
+            <p>When a question needs fresh information, the assistant pulls in live data instead of guessing.</p>
+          </div>
+          <div class="vm-fcard" id="voice" data-animate="fade-up">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
+            <h3>Voice</h3>
+            <p>Talk to ValleyMind with voice input, and each persona replies in its own distinct voice.</p>
+          </div>
+          <div class="vm-fcard" id="documents" data-animate="fade-up" data-delay="60">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Document Grounding</h3>
+            <p>Upload documents and the assistant answers from their content — summarise, extract, and ask questions.</p>
+          </div>
+          <div class="vm-fcard" id="roundtable" data-animate="fade-up" data-delay="120">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+            <h3>Round Table</h3>
+            <p>Bring Marcus, Elena and Angelina into one discussion and let them work through a problem with you together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="section-container">
+        <div class="cta-card" data-animate="fade-up">
+          <div class="cta-glow"></div>
+          <div class="cta-content">
+            <h2>Start a conversation</h2>
+            <p>Meet Marcus, Elena and Angelina — free to start.</p>
+            <div class="cta-actions">
+              <a href="https://valleymind-ai.onrender.com" rel="noopener" class="btn btn-primary btn-lg"><span>Try ValleyMind</span></a>
+              <a href="features.html" class="btn btn-ghost btn-lg">All Features</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/valleymind-logo.png" alt="ValleyMind AI" class="footer-logo">
+        <p class="footer-desc">ValleyMind AI is building the future of artificial intelligence by empowering creators, businesses, developers, students, and innovators with powerful AI tools in one intelligent ecosystem.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Product</h4><ul>
+          <li><a href="assistant.html">AI Assistant</a></li><li><a href="studio.html">Studio</a></li><li><a href="ai-builder.html">AI Builder</a></li><li><a href="features.html">Features</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="about.html">About</a></li><li><a href="use-cases.html">Use Cases</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Legal</h4><ul>
+          <li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#security">Security</a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025-2026 ValleyMind AI. All Rights Reserved.</p>
+      <p class="footer-contact"><a href="mailto:contactvalleymind0@gmail.com">contactvalleymind0@gmail.com</a><span class="sep">|</span><a href="tel:+2349151270571">+234 915 127 0571</a></p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebPage", "name": "AI Assistant — ValleyMind AI", "url": "https://valley-mind-website-o3l8.onrender.com/assistant.html", "description": "Three AI personas in one conversation, with memory, reasoning, search, document grounding and voice.", "isPartOf": { "@type": "WebSite", "name": "ValleyMind AI", "url": "https://valley-mind-website-o3l8.onrender.com/" } }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://valley-mind-website-o3l8.onrender.com/" }, { "@type": "ListItem", "position": 2, "name": "AI Assistant", "item": "https://valley-mind-website-o3l8.onrender.com/assistant.html" } ] }
+  </script>
+
+  <script src="script.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

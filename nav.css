@@ -1,0 +1,110 @@
+/* ============================================================
+   ValleyMind — shared PRODUCT navigation (header + mega-menus + mobile drawer)
+   Injected by nav.js into #vmnav-root on every page. Uses the design tokens
+   from style.css (:root). Additive only — does not touch the existing .navbar.
+   ============================================================ */
+
+/* Hide the legacy top navbar on any page that loads the shared product nav,
+   so the injected header is the single source of truth (no double nav). */
+.navbar { display: none !important; }
+
+.vmnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: 68px; display: flex; align-items: center;
+  background: rgba(13, 13, 26, 0.72);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.vmnav.scrolled { background: rgba(13, 13, 26, 0.94); border-bottom-color: var(--border-light); }
+
+.vmnav-inner {
+  width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; gap: 20px;
+}
+.vmnav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.vmnav-logo img { width: 34px; height: 34px; }
+.vmnav-logo span { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--text-primary); }
+
+/* ── Desktop menu ── */
+.vmnav-menu { display: flex; align-items: center; gap: 2px; margin-left: 8px; }
+.vmnav-menu > li { position: relative; }
+.vmnav-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 13px; border-radius: 10px; font-size: 0.92rem; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer; white-space: nowrap;
+  background: none; border: none; font-family: inherit; transition: color var(--transition-fast), background var(--transition-fast);
+}
+.vmnav-link:hover, .vmnav-item:focus-within > .vmnav-link { color: var(--text-primary); background: var(--accent-subtle); }
+.vmnav-link[aria-current="page"] { color: var(--accent); }
+.vmnav-link .caret { width: 14px; height: 14px; transition: transform var(--transition-fast); }
+.vmnav-item.open > .vmnav-link .caret { transform: rotate(180deg); }
+
+/* ── Dropdown / mega panels ── */
+.vmnav-panel {
+  position: absolute; top: calc(100% + 10px); left: 0; z-index: 1001;
+  background: rgba(18, 18, 34, 0.98); border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-card-hover);
+  padding: 12px; opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+.vmnav-item:hover > .vmnav-panel, .vmnav-item.open > .vmnav-panel, .vmnav-item:focus-within > .vmnav-panel {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.vmnav-panel.mega { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 4px; width: 480px; }
+.vmnav-panel.mini { min-width: 240px; }
+.vmnav-mi { display: flex; align-items: flex-start; gap: 11px; padding: 10px 12px; border-radius: 10px; color: var(--text-secondary); transition: background var(--transition-fast); }
+.vmnav-mi:hover { background: var(--accent-subtle); }
+.vmnav-mi .mi-ic { flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px; background: var(--accent-subtle); border: 1px solid var(--accent-border); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.vmnav-mi .mi-ic svg { width: 18px; height: 18px; }
+.vmnav-mi .mi-t { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+.vmnav-mi .mi-d { font-size: 0.78rem; color: var(--text-tertiary); margin-top: 1px; line-height: 1.4; }
+
+.vm-soon-badge {
+  font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  color: #ffcf5c; background: rgba(255, 180, 0, 0.12); border: 1px solid rgba(255, 180, 0, 0.3);
+  padding: 1px 6px; border-radius: 100px;
+}
+
+/* ── Right-side CTAs ── */
+.vmnav-cta { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.vmnav-cta .btn { padding: 8px 16px; font-size: 0.88rem; }
+
+/* ── Mobile burger + drawer ── */
+.vmnav-burger { display: none; margin-left: auto; width: 42px; height: 42px; border: none; background: none; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; border-radius: 10px; }
+.vmnav-burger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; }
+body.vmnav-open .vmnav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.vmnav-open .vmnav-burger span:nth-child(2) { opacity: 0; }
+body.vmnav-open .vmnav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.vmnav-backdrop { position: fixed; inset: 0; z-index: 998; background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+body.vmnav-open .vmnav-backdrop { opacity: 1; visibility: visible; }
+
+.vmnav-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 999; width: min(340px, 88vw);
+  background: var(--bg-surface); border-left: 1px solid var(--border-light);
+  transform: translateX(100%); transition: transform 0.28s cubic-bezier(.22,1,.36,1);
+  display: flex; flex-direction: column; overflow-y: auto; padding: 20px 18px 32px;
+}
+body.vmnav-open .vmnav-drawer { transform: translateX(0); }
+.vmnav-drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.vmnav-drawer-close { width: 40px; height: 40px; border: none; background: none; color: var(--text-secondary); cursor: pointer; font-size: 24px; border-radius: 10px; }
+.vmnav-drawer a, .vmnav-drawer .vmnav-acc-btn { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 13px 12px; border-radius: 10px; color: var(--text-primary); font-weight: 500; font-size: 0.98rem; width: 100%; background: none; border: none; font-family: inherit; text-align: left; cursor: pointer; }
+.vmnav-drawer a:hover, .vmnav-drawer .vmnav-acc-btn:hover { background: var(--accent-subtle); }
+.vmnav-drawer a[aria-current="page"] { color: var(--accent); }
+.vmnav-acc-btn .caret { width: 16px; height: 16px; transition: transform var(--transition-fast); }
+.vmnav-acc.open .vmnav-acc-btn .caret { transform: rotate(180deg); }
+.vmnav-acc-panel { max-height: 0; overflow: hidden; transition: max-height 0.28s ease; padding-left: 10px; }
+.vmnav-acc.open .vmnav-acc-panel { max-height: 640px; }
+.vmnav-acc-panel a { font-size: 0.9rem; color: var(--text-secondary); padding: 10px 12px; }
+.vmnav-drawer-cta { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+.vmnav-drawer-cta .btn { width: 100%; justify-content: center; }
+.vmnav-drawer-sep { height: 1px; background: var(--border-subtle); margin: 12px 0; }
+
+@media (max-width: 980px) {
+  .vmnav-menu, .vmnav-cta { display: none; }
+  .vmnav-burger { display: flex; }
+}
+
+/* Push page content below the fixed 68px header on pages that opt in. */
+body.vmnav-padded { padding-top: 68px; }

@@ -49,6 +49,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
 
   <style>
     .vm-faq { max-width: 820px; margin: 0 auto; }
@@ -63,7 +64,8 @@
     .vm-faq .a a { color: var(--accent); }
   </style>
 </head>
-<body>
+<body data-vmnav="resources">
+  <div id="vmnav-root"></div>
 
   <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
@@ -262,5 +264,6 @@
   </script>
 
   <script src="script.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>
