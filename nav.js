@@ -8,8 +8,9 @@
 (function () {
   'use strict';
 
-  // Single source of truth for the app URL (Log in / Try ValleyMind).
-  var APP_URL = 'https://valleymind-ai.onrender.com';
+  // Single source of truth for the app URL: read script.js's global constant,
+  // falling back to the current production app if it hasn't run yet.
+  var APP_URL = window.VALLEYMIND_APP_URL || 'https://valleymind-ai-opms.onrender.com';
 
   // Minimal inline icon set (stroke icons matching the app's Lucide style).
   var P = {

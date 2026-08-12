@@ -11,7 +11,8 @@
   // custom domain (e.g. https://valleymind.ai or https://app.valleymind.ai),
   // change ONLY this constant — every "Log In / Get Started / Launch" button
   // is wired to it below via the [data-app-link] attribute.
-  const VALLEYMIND_APP_URL = 'https://valleymind-ai.onrender.com';
+  const VALLEYMIND_APP_URL = 'https://valleymind-ai-opms.onrender.com';
+  window.VALLEYMIND_APP_URL = VALLEYMIND_APP_URL;  // single source of truth (nav.js reads this)
 
   document.querySelectorAll('[data-app-link]').forEach(el => {
     el.setAttribute('href', VALLEYMIND_APP_URL);
